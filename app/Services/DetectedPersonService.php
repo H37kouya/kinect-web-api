@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Exception;
 use Carbon\Carbon;
+use App\Helpers\Str;
 use Illuminate\Http\Request;
 use App\Repository\DetectedPersonRepositoryInterface;
 use App\Repository\GetPeopleCountRepositoryInterface;
@@ -32,6 +33,12 @@ class DetectedPersonService
         $this->_get_people_count_repository = $get_people_count_repository;
     }
 
+    /**
+     * create new column
+     *
+     * @param Request $request
+     * @return string
+     */
     public function create_column(Request $request): string
     {
         try {
@@ -43,17 +50,23 @@ class DetectedPersonService
         }
     }
 
+    /**
+     * get People Counter from DB
+     *
+     * @param Request $request
+     * @return string
+     */
     public function getPeopleCount(Request $request): string
     {
         try {
             $date = $request->query('date') ?? 'today';
 
-            if (strcmp($date, 'today') === 0) {
+            if (Str::strcmpBool($date, 'today')) {
                 $now = Carbon::now();
                 return (string)$this->_get_people_count_repository->count($now);
             }
 
-            if (strcmp($date, 'yesterday') === 0) {
+            if (Str::strcmpBool($date, 'yesterday')) {
                 $now = Carbon::now();
                 return (string)$this->_get_people_count_repository->count($now->subDay());
             }
