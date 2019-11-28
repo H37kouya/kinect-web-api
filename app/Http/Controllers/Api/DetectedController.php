@@ -9,6 +9,11 @@ use Exception;
 
 class DetectedController extends Controller
 {
+    /**
+     * service class
+     *
+     * @var DetectedPersonService
+     */
     private $_service;
 
     public function __construct(DetectedPersonService $service)
