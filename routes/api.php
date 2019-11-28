@@ -17,10 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('test', function () {
-    return 'test';
-});
-
 Route::post('detected', 'Api\DetectedController@detected');
 
 Route::get('get-people-count', 'Api\DetectedController@getPeopleCount');
