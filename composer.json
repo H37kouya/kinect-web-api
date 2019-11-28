@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "H37kouya/kinect-web-api",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "This is a web-api for kinect",
     "keywords": [
         "framework",
         "laravel"
