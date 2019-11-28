@@ -20,4 +20,9 @@ class DetectedController extends Controller
     {
         return $this->_service->create_column($request);
     }
+
+    public function getPeopleCount(Request $request)
+    {
+        return $this->_service->getPeopleCount($request);
+    }
 }

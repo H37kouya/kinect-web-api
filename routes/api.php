@@ -22,3 +22,5 @@ Route::get('test', function () {
 });
 
 Route::post('detected', 'Api\DetectedController@detected');
+
+Route::get('get-people-count', 'Api\DetectedController@getPeopleCount');
