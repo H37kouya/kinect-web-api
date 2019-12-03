@@ -2,7 +2,7 @@
 
 ## Description
 
-This program was created for [kinect-unity](https://github.com/H37kouya/kinect-unity).  
+This program was created for [H37kouya/kinect-unity](https://github.com/H37kouya/kinect-unity).  
 H37kouya/kinect-web-api processes the Database prepared for counting the number of people detected by Kinect.  
 The Database Table is very simple. id, created_at, and updated_at are saved in the table.
 
